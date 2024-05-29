@@ -1,7 +1,7 @@
 /* HERO SECTION */
 .hero-section {
   height: 200px;
-  background: url(".././assets/hero_bg.png");
+  background: url("/hero_bg.png");
   background-size: cover;
   background-position: top center;
   display: flex;

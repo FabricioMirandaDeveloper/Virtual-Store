@@ -1,11 +1,12 @@
 import style from "./NavButton.module.css"
+import { Link } from "react-router-dom"
 export function NavButton({title, link}) {
     return(
         <>
             <li className={style["navLi"]}>
-            <a className={style["navA"]} href={link}>
+            <Link className={style["navA"]} to={link}>
                 {title}
-            </a>
+            </Link>
             </li>
         </>
     )

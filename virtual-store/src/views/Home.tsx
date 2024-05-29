@@ -1,8 +1,13 @@
+import { Navbar } from "../components/NavBar";
 import style from "./Home.module.css";
+import { Footer } from "../components/Footer";
+import { Hero } from "../components/Hero";
 
 export function Home() {
   return (
     <>
+      <Navbar/>
+      <Hero first="Tecnologia" second="Renovada"/>
       <main>
         <div className={style["product-container"]} id="products">
           <a className={style["product-card"]} href="./details.html">
@@ -115,6 +120,7 @@ export function Home() {
           </a>
         </div>
       </main>
+      <Footer/>
     </>
   );
 }
