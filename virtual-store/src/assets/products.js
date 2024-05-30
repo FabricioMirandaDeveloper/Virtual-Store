@@ -35,7 +35,7 @@ const prod2 = new Product(
     "https://i.postimg.cc/kX8PKZpq/ipad.jpg",
   ],
   ["Silver", "Space Gray", "Gold"],
-  true
+  false
 );
 const prod3 = new Product(
   "S1T2U3",
@@ -115,7 +115,7 @@ const prod8 = new Product(
     "https://i.postimg.cc/nzqG0FKH/kindle1.jpg",
   ],
   ["Black", "White"],
-  true
+  false
 );
 const prod9 = new Product(
   "B1C2D3",
@@ -143,7 +143,7 @@ const prod10 = new Product(
     "https://i.postimg.cc/JnLF52wB/bose2.jpg",
   ],
   ["Black", "Silver"],
-  true
+  false
 );
 const prod11 = new Product(
   "A1B2C3",
@@ -159,7 +159,7 @@ const prod11 = new Product(
   false
 );
 const prod12 = new Product(
-  "A1B2C3",
+  "A1B2C4",
   "MacBook 12'",
   "Experience the power of creativity with the MacBook Pro 13'4. Featuring 8GB of RAM and 512GB of storage, this laptop provides the performance and storage capacity needed for demanding tasks. The sleek design in silver and space gray adds a touch of sophistication. The high-resolution Retina display brings your visuals to life, whether you're editing photos, creating videos, or simply browsing the web. With the latest technology and a lightweight build, the MacBook Pro 13'4 is the perfect companion for professionals and creative individuals alike.",
   500000,
@@ -282,25 +282,24 @@ const prod20 = new Product(
 
 const products = [
   prod1,
-  prod11,
-  prod14,
-  prod18,
-  prod13,
+  prod2,
+  prod3,
   prod4,
-  prod16,
+  prod5,
   prod6,
   prod7,
   prod8,
-  prod19,
   prod9,
   prod10,
+  prod11,
   prod12,
-  prod3,
+  prod13,
   prod14,
   prod15,
-  prod5,
+  prod16,
   prod17,
-  prod2,
+  prod18,
+  prod19,
   prod20,
 ];
 
