@@ -65,7 +65,7 @@
   box-sizing: border-box;
 }
 
-.cart-btn {
+.cart-btn, .remove-btn {
   width: 100%;
   background: #ff3b3c;
   color: white;
@@ -73,6 +73,9 @@
   border: none;
   height: 40px;
   border-radius: 10px;
+}
+.remove-btn {
+  background: black;
 }
 
 .cart-btn:hover {
