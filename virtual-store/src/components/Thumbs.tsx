@@ -1,30 +1,29 @@
-import styles from "./Thumbs.module.css"
+import { useState } from "react";
+import styles from "./Thumbs.module.css";
 
-export function Thumbs({product}) {
-    return (
-      <>
-        <section className={styles["product-images-block"]}>
-          <div className={styles["product-images"]}>
+export function Thumbs({ product }) {
+  const [thumb, setThumb] = useState(product.images[0] || "/mock1.jpg");
+  return (
+    <>
+      <section className={styles["product-images-block"]}>
+        <div className={styles["product-images"]}>
+          {product.images.map((each) => (
             <img
               className={styles["mini-img"]}
-              src={product.images[0]}
+              key={each}
+              src={each}
               alt={product.title}
+              onClick={() => setThumb(each)}
             />
-            {
-              <img
-                className={styles["mini-img"]}
-                src={product.images[0]}
-                alt={product.title}
-              />
-            }
-          </div>
-          <img
-            className={styles["big-img"]}
-            id="big-img"
-            src={product.images[0]}
-            alt={product.title}
-          />
-        </section>
-      </>
-    );
+          ))}
+        </div>
+        <img
+          className={styles["big-img"]}
+          id="big-img"
+          src={thumb}
+          alt={product.title}
+        />
+      </section>
+    </>
+  );
 }
