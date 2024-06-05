@@ -4,6 +4,7 @@ import { Details } from "./views/Details"
 import { Cart } from "./views/Cart"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import { NotFound } from "./views/NotFound"
+import OnSale from "./views/OnSale"
 
 export function App() {
   const browserRouter = createBrowserRouter([
@@ -22,6 +23,10 @@ export function App() {
     { 
       path: "/*", 
       element: <NotFound />
+    },
+    {
+      path: "/onsale",
+      element: <OnSale/>
     }
     ]);
   return (

@@ -1,5 +1,5 @@
 class Product {
-  constructor(id, title, description, price, stock, images, colors, onsale) {
+  constructor(id, title, description, price, stock, images, colors, onsale, discount) {
     this.id = id;
     this.title = title;
     this.description = description;
@@ -8,6 +8,7 @@ class Product {
     this.images = images;
     this.colors = colors;
     this.onsale = onsale;
+    this.discount = discount;
   }
 }
 
@@ -22,7 +23,8 @@ const prod1 = new Product(
     "https://i.postimg.cc/jqBrWKvM/ipad2.jpg",
   ],
   ["Silver", "Space Gray", "Gold"],
-  false
+  false,
+  0
 );
 const prod2 = new Product(
   "P7Q8R90",
@@ -35,7 +37,8 @@ const prod2 = new Product(
     "https://i.postimg.cc/kX8PKZpq/ipad.jpg",
   ],
   ["Silver", "Space Gray", "Gold"],
-  false
+  false,
+  0
 );
 const prod3 = new Product(
   "S1T2U3",
@@ -49,7 +52,8 @@ const prod3 = new Product(
     "https://i.postimg.cc/7ht8XryZ/sony2.jpg",
   ],
   ["Black", "Silver"],
-  false
+  false,
+  0
 );
 const prod4 = new Product(
   "S1T2U30",
@@ -63,7 +67,8 @@ const prod4 = new Product(
     "https://i.postimg.cc/7ht8XryZ/sony2.jpg",
   ],
   ["Black", "Silver"],
-  true
+  true,
+  20
 );
 const prod5 = new Product(
   "V4W5X6",
@@ -76,7 +81,8 @@ const prod5 = new Product(
     "https://i.postimg.cc/8k6zXFrd/gopro2.png",
   ],
   ["Black"],
-  false
+  false,
+  0
 );
 const prod6 = new Product(
   "V4W5X60",
@@ -89,7 +95,8 @@ const prod6 = new Product(
     "https://i.postimg.cc/WbcbB2MB/gopro12.png",
   ],
   ["Black"],
-  false
+  false,
+  0
 );
 const prod7 = new Product(
   "Y7Z8A9",
@@ -102,7 +109,8 @@ const prod7 = new Product(
     "https://i.postimg.cc/2ymFtsTn/kindle2.jpg",
   ],
   ["Black", "White"],
-  false
+  false,
+  0
 );
 const prod8 = new Product(
   "Y7Z8A90",
@@ -115,7 +123,8 @@ const prod8 = new Product(
     "https://i.postimg.cc/nzqG0FKH/kindle1.jpg",
   ],
   ["Black", "White"],
-  false
+  false,
+  0
 );
 const prod9 = new Product(
   "B1C2D3",
@@ -129,7 +138,8 @@ const prod9 = new Product(
     "https://i.postimg.cc/wvQGfQH4/bose3.jpg",
   ],
   ["Black", "Silver"],
-  false
+  false,
+  0
 );
 const prod10 = new Product(
   "B1C2D30",
@@ -143,7 +153,8 @@ const prod10 = new Product(
     "https://i.postimg.cc/JnLF52wB/bose2.jpg",
   ],
   ["Black", "Silver"],
-  false
+  false,
+  0
 );
 const prod11 = new Product(
   "A1B2C3",
@@ -156,7 +167,8 @@ const prod11 = new Product(
     "https://i.postimg.cc/Y91Q1tYQ/mock2.jpg",
   ],
   ["Silver", "Space Gray"],
-  false
+  false,
+  0
 );
 const prod12 = new Product(
   "A1B2C4",
@@ -169,7 +181,8 @@ const prod12 = new Product(
     "https://i.postimg.cc/HxGQcrcp/mock1.jpg",
   ],
   ["Silver", "Space Gray"],
-  true
+  true,
+  25
 );
 const prod13 = new Product(
   "D4E5F6",
@@ -183,7 +196,8 @@ const prod13 = new Product(
     "https://i.postimg.cc/Y91Q1tYQ/mock2.jpg",
   ],
   ["Silver", "Space Gray"],
-  false
+  true,
+  14
 );
 const prod14 = new Product(
   "D4E5F60",
@@ -196,7 +210,8 @@ const prod14 = new Product(
     "https://i.postimg.cc/HxGQcrcp/mock1.jpg",
   ],
   ["Silver", "Space Gray"],
-  false
+  false,
+  0
 );
 const prod15 = new Product(
   "G7H8I9",
@@ -210,7 +225,8 @@ const prod15 = new Product(
     "https://i.postimg.cc/Y91Q1tYQ/mock2.jpg",
   ],
   ["Black", "Silver"],
-  false
+  true,
+  14
 );
 const prod16 = new Product(
   "G7H8I90",
@@ -223,7 +239,8 @@ const prod16 = new Product(
     "https://i.postimg.cc/Y91Q1tYQ/mock2.jpg",
   ],
   ["Black", "Silver"],
-  true
+  true,
+  33
 );
 const prod17 = new Product(
   "J1K2L3",
@@ -237,7 +254,8 @@ const prod17 = new Product(
     "https://i.postimg.cc/j55rfSGF/galaxy3.jpg",
   ],
   ["Black", "Silver", "White"],
-  false
+  false,
+  0
 );
 const prod18 = new Product(
   "J1K2L30",
@@ -251,7 +269,8 @@ const prod18 = new Product(
     "https://i.postimg.cc/j55rfSGF/galaxy3.jpg",
   ],
   ["Black", "Silver", "White"],
-  false
+  true,
+  22
 );
 const prod19 = new Product(
   "M4N5O6",
@@ -264,7 +283,8 @@ const prod19 = new Product(
     "https://i.postimg.cc/3N278cM8/watch1.jpg",
   ],
   ["Space Gray", "Silver", "Gold"],
-  false
+  false,
+  0
 );
 const prod20 = new Product(
   "M4N5O60",
@@ -277,7 +297,8 @@ const prod20 = new Product(
     "https://i.postimg.cc/VstzWdJx/watch.jpg",
   ],
   ["Space Gray", "Silver", "Gold"],
-  false
+  true,
+  15
 );
 
 const products = [
