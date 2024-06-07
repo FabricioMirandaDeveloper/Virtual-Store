@@ -197,7 +197,7 @@ const prod13 = new Product(
   ],
   ["Silver", "Space Gray"],
   true,
-  14
+  16
 );
 const prod14 = new Product(
   "D4E5F60",

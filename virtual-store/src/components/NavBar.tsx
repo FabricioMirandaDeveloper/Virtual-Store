@@ -5,7 +5,7 @@ import { NavButton } from "./NavButton";
 export function Navbar() {
   return (
   <>
-    <header className="bg-black">
+    <header>
       <div className={style["headerContainer"]}>
         <Link to="/" className={style["headerLogo"]}>
           <img
