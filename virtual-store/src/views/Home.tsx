@@ -1,6 +1,6 @@
 import { Navbar } from "../components/NavBar";
-import { Footer } from "../components/Footer";
 import { Hero } from "../components/Hero";
+import { Footer } from "../components/Footer";
 import { ProductCard } from "../components/ProductCard";
 import products from "../assets/products.js";
 
