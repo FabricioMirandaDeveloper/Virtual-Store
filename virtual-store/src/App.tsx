@@ -21,7 +21,7 @@ export function App() {
       element: <Cart />
     },
     { 
-      path: "/*", 
+      path: "/*",
       element: <NotFound />
     },
     {
