@@ -1,6 +1,9 @@
 import styles from "./CardCart.module.css"
 export function CardCart(props) {
-  const { id, title, description, color, price, image, quantity } = props;
+  const { id, title, description, color, price, image, quantity, onQuantityChange } = props;
+  const handleChange = (event) => {
+    onQuantityChange(id, event.target.value);
+  };
   return (
     <>
     <article className={styles["product-cart"]}>
@@ -22,6 +25,7 @@ export function CardCart(props) {
               value={quantity}
               min="1"
               id={id}
+              onChange={handleChange}
             />
           </div>
           <strong className={styles["price"]}>{`AR$ ${price}`}</strong>
