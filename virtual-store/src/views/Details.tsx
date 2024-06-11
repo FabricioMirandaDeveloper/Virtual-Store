@@ -1,6 +1,6 @@
 import { Navbar } from "../components/NavBar";
-import styles from "./Details.module.css";
 import { Footer } from "../components/Footer";
+import styles from "./Details.module.css";
 import products from "../assets/products";
 import { useParams } from "react-router-dom";
 import { NotFound } from "./NotFound.js";
@@ -18,15 +18,18 @@ export function Details() {
     return (
       <>
         <Navbar />
-        <main>
-          <div className={styles["details-container"]}>
-            <div id="details" className={styles["columns-container"]}>
+        <main className="
+          w-full flex justify-center 
+          items-center p-5
+        ">
+          <div>
+            <div id="details" className="flex">
               <Thumbs product={product}/>
               <Description product={product}/>
               <Checkout product={product}/>
             </div>
-            <div className={styles["sales-block"]}>
-              <h2 className={styles["sales-title"]}>Ofertas de la semana</h2>
+            <div className="flex flex-col">
+              <h2 className="text-center text-[40px]">Ofertas de la semana</h2>
               <div
                 id="product-container"
                 className={styles["product-container"]}
