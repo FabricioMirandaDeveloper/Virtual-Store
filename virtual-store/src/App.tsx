@@ -1,4 +1,3 @@
-import "./module.css"
 import { Home } from "./views/Home"
 import { Details } from "./views/Details"
 import { Cart } from "./views/Cart"
