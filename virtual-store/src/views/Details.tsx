@@ -1,5 +1,4 @@
 import { Navbar } from "../components/NavBar";
-import styles from "./Details.module.css";
 import { Footer } from "../components/Footer";
 import products from "../assets/products";
 import { useParams } from "react-router-dom";
@@ -17,19 +16,37 @@ export function Details() {
   if (product) {
     return (
       <>
-        <Navbar />
-        <main>
-          <div className={styles["details-container"]}>
-            <div id="details" className={styles["columns-container"]}>
-              <Thumbs product={product}/>
-              <Description product={product}/>
-              <Checkout product={product}/>
+        {/* <Navbar /> */}
+        <main
+          className="
+          w-full flex justify-center 
+          items-center p-5
+        "
+        >
+          <div>
+            <div id="details" className="flex">
+              <Thumbs product={product} />
+              <Description product={product} />
+              <Checkout product={product} />
             </div>
-            <div className={styles["sales-block"]}>
-              <h2 className={styles["sales-title"]}>Ofertas de la semana</h2>
+            <div className="flex flex-col w-full">
+              <h2 className="
+              text-center
+              text-xl
+              sm:text-2xl
+              md:text-3xl
+              lg:text-4xl
+              my-5
+              ">Ofertas de la semana</h2>
               <div
                 id="product-container"
-                className={styles["product-container"]}
+                className="w-full grid gap-4
+                   grid-cols-1
+                   sm:grid-cols-2
+                   md:grid-cols-3
+                   lg:grid-cols-4
+                   justify-items-center
+                   "
               >
                 {onsale.map((product) => (
                   <ProductCard
