@@ -13,7 +13,7 @@ export function Footer() {
           max-[480px]:grid-cols-1
           max-sm:grid-cols-2
           sm:grid-cols-3
-          md:grid-cols-5s"
+          md:grid-cols-5"
         >
           <ul className="list-none p-[10px]">
             <li className="font-bold pb-2">
