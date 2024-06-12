@@ -16,7 +16,7 @@ export function Details() {
   if (product) {
     return (
       <>
-        {/* <Navbar /> */}
+        <Navbar />
         <main
           className="
           w-full flex justify-center 
@@ -24,7 +24,7 @@ export function Details() {
         "
         >
           <div>
-            <div id="details" className="flex">
+            <div id="details" className="flex flex-col md:flex-row justify-center">
               <Thumbs product={product} />
               <Description product={product} />
               <Checkout product={product} />

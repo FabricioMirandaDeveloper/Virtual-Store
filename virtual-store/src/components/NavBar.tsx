@@ -13,6 +13,7 @@ export function Navbar() {
     pt-5
     text-white
     text-center
+    px-5
     "> 
       <div className="
       w-4/5
@@ -26,7 +27,7 @@ export function Navbar() {
       ">
         <Link to="/" className="w-1/3 flex items-center flex-grow">
           <img
-            className="h-[50px]"
+            className="h-10 "
             src="/tiendamia-logo.svg"
             alt="Logo store"
           />

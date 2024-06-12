@@ -10,7 +10,7 @@ export function Home() {
       <Navbar />
       <Hero first="Tecnologia" second="Renovada" />
       <main className="w-full flex justify-center items-center p-[20px]">
-        <div className="w-[1080px] flex flex-wrap justify-between" id="products">
+        <div className="w-[1080px] flex flex-wrap justify-center md:justify-between" id="products">
           {products.map((each) => (
             <ProductCard
               key={each.id}

@@ -1,9 +1,9 @@
 import { Navbar } from "../components/NavBar";
-import styles from "./Cart.module.css";
 import { Footer } from "../components/Footer";
 import { Hero } from "../components/Hero";
 import { useState, useEffect } from "react";
 import { CardCart } from "../components/CardCart";
+import CardResume from "../components/CardResume";
 
 export function Cart() {
   const [productsOnCart, setProductsOnCart] = useState([]);
@@ -41,25 +41,7 @@ export function Cart() {
             />
           ))}
         </section>
-        <div className={styles["cart-resume"]}>
-          <div className={styles["cart-data"]}>
-            <h2 className={styles["cart-title"]}>
-              <span>Resumen</span>
-              <span>del</span>
-              <span>pedido</span>
-            </h2>
-            <div className={styles["cart-total"]}>
-              <h3>Total</h3>
-              <strong className={styles["cart-price"]}>$800000</strong>
-            </div>
-            <small className={styles["cart-tax"]}>
-              Incluye impuesto PAIS y percepción AFIP.
-            </small>
-          </div>
-          <button className={styles["cart-btn"]} id="buy" type="button">
-            COMPRAR
-          </button>
-        </div>
+        <CardResume total="90"/>
       </main>
       <Footer />
     </>

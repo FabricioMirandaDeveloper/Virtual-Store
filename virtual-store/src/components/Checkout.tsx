@@ -1,5 +1,4 @@
 import { useState, useRef, useEffect } from "react";
-import styles from "./Checkout.module.css";
 
 export function Checkout({ product }) {
   const [quantity, setQuantity] = useState(1);
@@ -38,34 +37,35 @@ export function Checkout({ product }) {
     localStorage.setItem("cart", JSON.stringify(productsOnCart));
   };
   return (
-    <section className={styles["product-checkout-block"]}>
-      <div className={styles["checkout-container"]}>
-        <span className={styles["checkout-total-label"]}>Total:</span>
-        <h2 id="price" className={styles["checkout-total-price"]}>
+    <section className="w-[340px] p-[10px] m-[10px]">
+      <div className="bg-[#ebebeb] p-[33px] rounded-sm">
+        <span className="text-[#ff3b3c]">Total:</span>
+        <h2 id="price" className="text-[28px] font-bold mt-2">
           $ {(product.price * quantity).toLocaleString()}
         </h2>
-        <p className={styles["checkout-description"]}>
+        <p className="leading-5">
           Includes Country tax and AFIP collection
         </p>
-        <ul className={styles["checkout-policy-list"]}>
-          <li>
-            <span className={styles["policy-icon"]}>
+        <ul>
+          <li className="flex my-4">
+            <span>
               <img src="/truck.png" alt="Truck" />
             </span>
-            <span className={styles["policy-desc"]}></span>
+            <span></span>
           </li>
-          <li>
-            <span className={styles["policy-icon"]}>
+          <li className="flex my-4">
+            <span className="mr-4">
               <img src="/plane.png" alt="Plane" />
             </span>
-            <span className={styles["policy-desc"]}>
+            <span>
               Add the product to the cart to know the shipping costs
             </span>
           </li>
         </ul>
-        <div className={styles["checkout-process"]}>
-          <div className={styles["top"]}>
+        <div>
+          <div className="flex">
             <input
+              className="w-[62px] h-[40px] rounded-[10px] border-none mr-3 pl-5"
               type="number"
               min="1"
               value={quantity}
@@ -74,7 +74,7 @@ export function Checkout({ product }) {
             />
             <button
               type="button"
-              className={button ? styles["remove-btn"] : styles["cart-btn"]}
+              className={button ? "w-full bg-black text-white font-bold border-none h-[40px] rounded-lg" : " w-full bg-[#ff3b3c] hover:bg-[#fc4848] text-white font-bold border-none h-[40px] rounded-lg"}
               onClick={manageCart}
             >
               {button ? "Remove from cart" : "Add to cart"}
