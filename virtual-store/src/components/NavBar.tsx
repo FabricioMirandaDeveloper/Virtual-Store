@@ -16,7 +16,7 @@ export function Navbar() {
     px-5
     "> 
       <div className="
-      w-4/5
+      w-5/6
       flex
       items-center
       flex-grow
@@ -83,12 +83,14 @@ export function Navbar() {
         </ul>
       </div>
       <nav id="navbar" className="
-      w-full 
+      w-full
       py-5
       list-none 
       flex 
-      justify-around
-      
+      flex-wrap
+      justify-center
+      items-center
+      sm:justify-evenly
       ">
         <NavButton title="Ofertas" link="/onsale"/>
         <NavButton title="Cómo comprar" link="#"/>

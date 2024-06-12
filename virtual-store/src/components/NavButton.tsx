@@ -4,7 +4,7 @@ export function NavButton({title, link}) {
     return(
         <>
             <li>
-            <Link className="font-bold" to={link}>
+            <Link className="text-xs sm:text-sm md:text-base font-bold px-2" to={link}>
                 {title}
             </Link>
             </li>
