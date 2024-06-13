@@ -1,7 +1,7 @@
 import { Navbar } from "../components/NavBar";
 import { Footer } from "../components/Footer";
 import { Hero } from "../components/Hero";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { CardCart } from "../components/CardCart";
 import CardResume from "../components/CardResume";
 
@@ -13,14 +13,7 @@ export function Cart() {
       setProductsOnCart(products);
     }
   }, []);
-  // Paso 1: Definir la función handleQuantityChange
-  const handleQuantityChange = (id, newQuantity) => {
-    // Actualizar el estado del carrito con la nueva cantidad
-    const updatedProducts = productsOnCart.map((product) =>
-      product.id === id ? { ...product, units: newQuantity } : product
-    );
-    setProductsOnCart(updatedProducts);
-  };
+
   return (
     <>
       <Navbar />
@@ -37,7 +30,7 @@ export function Cart() {
               color={product.colors[0]}
               image={product.images[0]}
               quantity={product.units}
-              onQuantityChange={handleQuantityChange}
+              /* onQuantityChange={handleQuantityChange} */
             />
           ))}
         </section>
