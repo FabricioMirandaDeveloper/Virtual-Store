@@ -1,6 +1,7 @@
 import { useRef, useEffect } from "react";
 import styles from "./CardCart.module.css";
-export function CardCart(props) {
+import IProductCard from "../interfaces/ProductCard";
+export function CardCart(props: IProductCard) {
   const {
     id,
     title,
@@ -11,15 +12,15 @@ export function CardCart(props) {
     quantity
   } = props;
 
-  const units = useRef(null);
+  const units = useRef<HTMLInputElement>(null);
   useEffect(() => {
     if (units.current) {
-      units.current.value = quantity
+      (units.current).value = quantity
     }
   }, [quantity]);
   const manageUnits = () => {
     const newQuantity = Number(units.current?.value)
-    const productsOnCart = JSON.parse(localStorage.getItem("cart"))
+    const productsOnCart = JSON.parse(localStorage.getItem("cart") || "")
     const productToUpdate = productsOnCart.find((each) => each.id === id);
     productToUpdate.units = newQuantity 
     localStorage.setItem("cart", JSON.stringify(productsOnCart));

@@ -1,15 +1,16 @@
 import { Navbar } from "../components/NavBar";
 import { Footer } from "../components/Footer";
 import { Hero } from "../components/Hero";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, } from "react";
 import { CardCart } from "../components/CardCart";
 import CardResume from "../components/CardResume";
+import Product from "../interfaces/product";
 
 export function Cart() {
-  const [productsOnCart, setProductsOnCart] = useState([]);
+  const [productsOnCart, setProductsOnCart] = useState<Product[]>([]);
   useEffect(() => {
     if (localStorage.getItem("cart")) {
-      const products = JSON.parse(localStorage.getItem("cart"));
+      const products = JSON.parse(localStorage.getItem("cart") || "");
       setProductsOnCart(products);
     }
   }, []);

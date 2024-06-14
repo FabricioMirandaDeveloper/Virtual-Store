@@ -3,6 +3,7 @@ import { Hero } from "../components/Hero";
 import { Footer } from "../components/Footer";
 import { ProductCard } from "../components/ProductCard";
 import products from "../assets/products.js";
+import Product from "../interfaces/product.js";
 
 export function Home() {
   return (
@@ -11,7 +12,7 @@ export function Home() {
       <Hero first="Tecnologia" second="Renovada" />
       <main className="w-full flex justify-center items-center p-[20px]">
         <div className="w-[1080px] flex flex-wrap justify-center md:justify-between" id="products">
-          {products.map((each) => (
+          {products.map((each: Product) => (
             <ProductCard
               key={each.id}
               id={each.id}

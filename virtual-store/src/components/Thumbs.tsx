@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
+import ProductProp from "../interfaces/ProductProp";
 
-export function Thumbs({ product }) {
+export function Thumbs({product}:ProductProp) {
   const [thumb, setThumb] = useState(product.images[0] || "/mock1.jpg");
-  useEffect(() => setThumb(product.images[0]), [product.id]);
+  useEffect(() => setThumb(product.images[0]), [product.id, product.images]);
   return (
     <>
       <section className="flex w-[340px] p-[10px] m-[10px]">

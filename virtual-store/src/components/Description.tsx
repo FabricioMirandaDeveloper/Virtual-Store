@@ -1,4 +1,6 @@
-export function Description({product}) {
+import ProductProp from "../interfaces/ProductProp";
+
+export function Description({product}: ProductProp) {
   return (
     <>
       <div className="w-[340px] p-2 m-2">

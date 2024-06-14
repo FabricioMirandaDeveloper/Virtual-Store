@@ -7,11 +7,12 @@ import { ProductCard } from "../components/ProductCard";
 import { Thumbs } from "../components/Thumbs.js";
 import { Description } from "../components/Description.js";
 import { Checkout } from "../components/Checkout.js";
+import Product from "../interfaces/product.js";
 
 export function Details() {
   const { id } = useParams();
-  const product = products.find((each) => each.id === id);
-  const onsale = products.filter((each) => each.onsale);
+  const product: Product = products.find((each) => each.id === id);
+  const onsale: Product[] = products.filter((each) => each.onsale);
 
   if (product) {
     return (
