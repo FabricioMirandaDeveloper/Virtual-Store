@@ -7,14 +7,40 @@ import { ProductCard } from "../components/ProductCard";
 import { Thumbs } from "../components/Thumbs.js";
 import { Description } from "../components/Description.js";
 import { Checkout } from "../components/Checkout.js";
-import Product from "../interfaces/product.js";
+/* import Product from "../interfaces/product.js"; */
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 export function Details() {
   const { id } = useParams();
-  const product: Product = products.find((each) => each.id === id);
-  const onsale: Product[] = products.filter((each) => each.onsale);
+  const [productt, setProductt] = useState<Product>({
+    id: "",
+    title: "",
+    price: 0,
+    images: [],
+    colors: [],
+  });
+  const [onsale, setOnSalee] = useState<Product[]>([]); 
+  useEffect(() => {
+    axios("/products.json")
+       .then((res) => {
+          const products: Array<Product> = res.data;
+          const detailProduct: Product | undefined = products.find(
+             (each) => each.id === id
+          );
+          detailProduct && setProductt(detailProduct);
+          const filterProducts: Array<Product> = products.filter(
+             (each) => each.onsale
+          );
+          filterProducts.length > 0 && setOnSalee(filterProducts);
+       })
+       .catch((err) => console.log(err));
+ }, [id]);
+ 
+  /* const product: Product = products.find((each) => each.id === id);
+  const onsale: Product[] = products.filter((each) => each.onsale); */
 
-  if (product) {
+  if (productt) {
     return (
       <>
         <Navbar />
@@ -26,9 +52,9 @@ export function Details() {
         >
           <div>
             <div id="details" className="flex flex-col md:flex-row justify-center">
-              <Thumbs product={product} />
-              <Description product={product} />
-              <Checkout product={product} />
+              <Thumbs product={productt} />
+              <Description product={productt} />
+              <Checkout product={productt} />
             </div>
             <div className="flex flex-col w-full">
               <h2 className="
