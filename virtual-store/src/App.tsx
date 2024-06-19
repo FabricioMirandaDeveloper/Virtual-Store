@@ -4,6 +4,8 @@ import { Cart } from "./views/Cart"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import { NotFound } from "./views/NotFound"
 import OnSale from "./views/OnSale"
+import { Provider } from "react-redux";
+import store from "./store/index"
 
 export function App() {
   const browserRouter = createBrowserRouter([
@@ -30,7 +32,9 @@ export function App() {
     ]);
   return (
     <>
+    <Provider store={store}>
     <RouterProvider router={browserRouter}/>      
+    </Provider>
     </>
   )
 }
