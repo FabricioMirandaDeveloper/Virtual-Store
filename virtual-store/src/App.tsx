@@ -33,7 +33,7 @@ export function App() {
   return (
     <>
     <Provider store={store}>
-    <RouterProvider router={browserRouter}/>      
+      <RouterProvider router={browserRouter}/>      
     </Provider>
     </>
   )
