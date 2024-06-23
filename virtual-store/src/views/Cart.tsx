@@ -5,13 +5,17 @@ import { useState, useEffect, } from "react";
 import { CardCart } from "../components/CardCart";
 import CardResume from "../components/CardResume";
 import Product from "../interfaces/Product";
+import { useDispatch } from "react-redux";
+import { calculateTotal } from "../store/actions/product";
 
 export function Cart() {
   const [productsOnCart, setProductsOnCart] = useState<Product[]>([]);
+  const dispatch = useDispatch()
   useEffect(() => {
-    if (localStorage.getItem("cart")) {
-      const products = JSON.parse(localStorage.getItem("cart") || "");
-      setProductsOnCart(products);
+    const products = localStorage.getItem("cart");
+    if (products) {
+      setProductsOnCart(JSON.parse(products));
+      dispatch(calculateTotal({ products: JSON.parse(products) }));
     }
   }, []);
 
@@ -31,11 +35,10 @@ export function Cart() {
               color={product.colors ? product.colors[0] : ''}
               image={product.images ? product.images[0] : ''}
               quantity={product.units}
-              /* onQuantityChange={handleQuantityChange} */
             />
           ))}
         </section>
-        <CardResume total="90"/>
+        <CardResume/>
       </main>
       <Footer />
     </>

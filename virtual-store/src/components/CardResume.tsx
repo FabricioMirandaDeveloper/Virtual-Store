@@ -1,5 +1,9 @@
 import styles from "./CardResume.module.css"
-export default function CardResume({total}) {
+import { useSelector } from "react-redux";
+export default function CardResume() {
+  const total = useSelector((store) => store.products.total);
+  console.log(total);
+  
   return (
     <>
       <div className={styles["cart-resume"]}>

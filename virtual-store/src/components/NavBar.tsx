@@ -6,9 +6,7 @@ import { captureText } from "../store/actions/product";
 
 export function Navbar() {
   const location = useLocation();
-  console.log(location);
   const pathname = location.pathname;
-  console.log(pathname);
   const textStore = useSelector((store) => store.products.text);
   const text = useRef();
   const dispatch = useDispatch();

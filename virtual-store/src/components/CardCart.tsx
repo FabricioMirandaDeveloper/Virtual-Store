@@ -1,29 +1,29 @@
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import styles from "./CardCart.module.css";
-import IProductCard from "../interfaces/ProductCard";
-export function CardCart(props: IProductCard) {
-  const {
-    id,
-    title,
-    description,
-    color,
-    price,
-    image,
-    quantity
-  } = props;
+import { useDispatch } from "react-redux";
+import { calculateTotal } from "../store/actions/product";
+import Product from "../interfaces/Product";
 
-  const units = useRef<HTMLInputElement>(null);
-  useEffect(() => {
-    if (units.current) {
-      (units.current).value = quantity
-    }
-  }, [quantity]);
+export function CardCart(props) {
+  const { id, title, price, color, image, description, quantity} = props;
+  const dispatch = useDispatch();
+  const unitsToBuy = useRef<HTMLInputElement>(null);
+  console.log(unitsToBuy);
+  
   const manageUnits = () => {
-    const newQuantity = Number(units.current?.value)
-    const productsOnCart = JSON.parse(localStorage.getItem("cart") || "")
-    const productToUpdate = productsOnCart.find((each) => each.id === id);
-    productToUpdate.units = newQuantity 
-    localStorage.setItem("cart", JSON.stringify(productsOnCart));
+    const productsOnCart = localStorage.getItem("cart");
+    let products = [];
+    if (productsOnCart) {
+      products = JSON.parse(productsOnCart);
+    }
+    const one = products?.find((each: Product) => each.id === id);
+    console.log(one);
+    
+    if (one) {
+      one.units = Number(unitsToBuy.current.value);
+      localStorage.setItem("cart", JSON.stringify(products));
+      dispatch(calculateTotal({ products }));
+    }
   };
   return (
     <>
@@ -40,7 +40,7 @@ export function CardCart(props: IProductCard) {
             defaultValue={quantity}
             min="1"
             id={id}
-            ref={units}
+            ref={unitsToBuy}
             onChange={manageUnits}
           />
         </div>
