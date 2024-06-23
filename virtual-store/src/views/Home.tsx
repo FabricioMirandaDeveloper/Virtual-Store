@@ -5,14 +5,23 @@ import { ProductCard } from "../components/ProductCard";
 import Product from "../interfaces/product.js";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
 export function Home() {
   const [products, setProducts] = useState<Product[]>([]);
+  const text = useSelector((store) => store.products.text);
   useEffect(() => {
-    axios.get("/products.json")
-       .then((res) => setProducts(res.data))
-       .catch((err) => console.log(err));
-  }, []);
+    axios
+      .get("/products.json")
+      .then((res) => {
+        const filterData = res.data.filter((each) =>
+          each.title.toLowerCase().includes(text.toLowerCase())
+        );
+        setProducts(filterData);
+      })
+      .catch((err) => console.log(err));
+  }, [text]);
+  console.log(text)
   
   return (
     <>
