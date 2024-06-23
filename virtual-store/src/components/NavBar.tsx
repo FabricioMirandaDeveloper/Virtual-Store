@@ -1,10 +1,15 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { NavButton } from "./NavButton";
 import { useRef } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { captureText } from "../store/actions/product";
 
 export function Navbar() {
+  const location = useLocation();
+  console.log(location);
+  const pathname = location.pathname;
+  console.log(pathname);
+  const textStore = useSelector((store) => store.products.text);
   const text = useRef();
   const dispatch = useDispatch();
   const setText = () => {
@@ -49,7 +54,7 @@ export function Navbar() {
             />
           </Link>
           <form className="">
-            <input
+          {pathname === "/" && (<input
               className="
             h-[40px]
             rounded-[15px]
@@ -66,7 +71,8 @@ export function Navbar() {
               id="search"
               ref={text}
               onChange={setText}
-            />
+              defaultValue={textStore}
+            />)}
           </form>
           <ul
             className=" 
