@@ -2,7 +2,6 @@ import { Navbar } from "../components/NavBar";
 import { Hero } from "../components/Hero";
 import { Footer } from "../components/Footer";
 import { ProductCard } from "../components/ProductCard";
-/* import products from "../assets/products.js"; */
 import Product from "../interfaces/product.js";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -14,7 +13,7 @@ export function Home() {
        .then((res) => setProducts(res.data))
        .catch((err) => console.log(err));
   }, []);
- 
+  
   return (
     <>
       <Navbar />
