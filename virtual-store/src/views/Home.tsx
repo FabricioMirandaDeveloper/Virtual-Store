@@ -2,14 +2,15 @@ import { Navbar } from "../components/NavBar";
 import { Hero } from "../components/Hero";
 import { Footer } from "../components/Footer";
 import { ProductCard } from "../components/ProductCard";
-import Product from "../interfaces/product.js";
+import Product from "../interfaces/Product.js";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import { RootState } from "../store/index.js";
 
 export function Home() {
   const [products, setProducts] = useState<Product[]>([]);
-  const text = useSelector((store) => store.products.text);
+  const text = useSelector((store: RootState) => store.products.text);
   useEffect(() => {
     axios
       .get("/products.json")
@@ -21,8 +22,6 @@ export function Home() {
       })
       .catch((err) => console.log(err));
   }, [text]);
-  console.log(text)
-  
   return (
     <>
       <Navbar />
@@ -35,8 +34,8 @@ export function Home() {
               id={each.id}
               title={each.title}
               price={each.price}
-              color={each.colors[0]}
-              image={each.images[0]}
+              color={each.colors ? each.colors[0] : ""}
+              image={each.images ? each.images[0] : ""}
             />
           ))}
         </div>

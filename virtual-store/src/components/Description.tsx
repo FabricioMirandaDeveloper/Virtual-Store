@@ -11,7 +11,7 @@ export function Description({product}: ProductProp) {
               Color
             </label>
             <select className="w-full h-[40px] rounded-[10px] p-2 my-2 border-2 border-solid border-[#eaeaea]" id="color">
-              {product.colors.map((each, index) => (
+              {product.colors && product.colors.map((each, index) => (
                 <option key={index} value={each}>
                   {each}
                 </option>
