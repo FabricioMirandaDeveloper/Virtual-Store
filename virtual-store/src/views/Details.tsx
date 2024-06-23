@@ -1,15 +1,14 @@
 import { Navbar } from "../components/NavBar";
 import { Footer } from "../components/Footer";
-import products from "../assets/products";
 import { useParams } from "react-router-dom";
 import { NotFound } from "./NotFound.js";
 import { ProductCard } from "../components/ProductCard";
 import { Thumbs } from "../components/Thumbs.js";
 import { Description } from "../components/Description.js";
 import { Checkout } from "../components/Checkout.js";
-/* import Product from "../interfaces/product.js"; */
 import axios from "axios";
 import { useEffect, useState } from "react";
+import Product from "../interfaces/Product.js";
 
 export function Details() {
   const { id } = useParams();
@@ -81,8 +80,8 @@ export function Details() {
                     id={product.id}
                     title={product.title}
                     price={product.price}
-                    color={product.colors[0]}
-                    image={product.images[0]}
+                    color={product.colors ? product.colors[0] : ''}
+                    image={product.images ? product.images[0] : ''}
                   />
                 ))}
               </div>

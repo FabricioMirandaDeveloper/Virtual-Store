@@ -1,14 +1,11 @@
 import { Navbar } from "../components/NavBar"
-import { Hero } from "../components/Hero"
-import styles from "./NotFound.module.css"
 import { Footer } from "../components/Footer"
 
 export function NotFound() {
     return(
         <>
         <Navbar/>
-        <Hero first="404" second="NOT FOUND"/>
-        <div className={styles["example"]}>
+        <div className="text-red-700 flex justify-center items-center text-7xl h-40 font-bold">
             <h1>404 NOT FOUND</h1>
         </div>
         <Footer/>

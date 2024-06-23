@@ -4,7 +4,7 @@ import { Hero } from "../components/Hero";
 import { useState, useEffect, } from "react";
 import { CardCart } from "../components/CardCart";
 import CardResume from "../components/CardResume";
-import Product from "../interfaces/product";
+import Product from "../interfaces/Product";
 
 export function Cart() {
   const [productsOnCart, setProductsOnCart] = useState<Product[]>([]);
@@ -28,8 +28,8 @@ export function Cart() {
               title={product.title}
               description={product.description}
               price={product.price}
-              color={product.colors[0]}
-              image={product.images[0]}
+              color={product.colors ? product.colors[0] : ''}
+              image={product.images ? product.images[0] : ''}
               quantity={product.units}
               /* onQuantityChange={handleQuantityChange} */
             />
